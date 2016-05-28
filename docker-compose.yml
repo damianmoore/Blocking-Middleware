@@ -1,0 +1,9 @@
+apache:
+  container_name: blocked-apache
+  build: docker/apache
+  volumes:
+   - ./api:/var/www/html/api
+   - ./backend:/var/www/html/backend
+   - ./example-client:/var/www/html/example-client
+  ports:
+   - "8080:80"
