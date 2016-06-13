@@ -1,14 +1,14 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine On
+	RewriteEngine On
 
 	RewriteBase /1.2
 
-    # Don't rewrie for files and dirs
-    RewriteCond %{SCRIPT_FILENAME} !-d
-    RewriteCond %{SCRIPT_FILENAME} !-f
+	# Don't rewrie for files and dirs
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
 
-    # All our subpages
-    RewriteRule ^register/user$ api.php [NC,L,qsa]
+	# All our subpages
+	RewriteRule ^register/user$ api.php [NC,L,qsa]
 	RewriteRule ^status/user$ api.php [NC,L,qsa]
 	RewriteRule ^prepare/probe$ api.php [NC,L,qsa]
 	RewriteRule ^register/probe$ api.php [NC,L,qsa]
@@ -25,8 +25,8 @@
 	RewriteRule ^status/stats api.php [NC,L,qsa]
 	RewriteRule ^status/isp-stats api.php [NC,L,qsa]
 
-    RewriteRule ^category api.php [NC,L,qsa]
-    RewriteRule ^category/sites api.php [NC,L,qsa]
+	RewriteRule ^category api.php [NC,L,qsa]
+	RewriteRule ^category/sites api.php [NC,L,qsa]
 
 	# admin functions
 	RewriteRule ^list/users api.php [NC,L,qsa]
