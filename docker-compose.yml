@@ -7,3 +7,18 @@ apache:
    - ./example-client:/var/www/html/example-client
   ports:
    - "8080:80"
+  links:
+   - mysql
+mysql:
+  container_name: blocked-mysql
+  image: mysql
+  ports:
+   - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: bowdlerize
+    MYSQL_USER: blocked
+    MYSQL_PASSWORD: blocked
+  volumes:
+   - ./docker/volumes/mysql:/var/lib/mysql
+   - ./mysql:/docker-entrypoint-initdb.d
